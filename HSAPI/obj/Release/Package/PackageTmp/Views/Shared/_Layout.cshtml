@@ -1,0 +1,101 @@
+﻿@model IEnumerable<HSAPI.Models.ShowPaybillTransactions>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                @Html.ActionLink("Paybill Service API", "Index", "Help", new { area = "" }, null)
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>*@
+                    @*<li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2022 Paybill Service API.</p>
+        </footer>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div id="vacList2">
+                        <table id="TrainingList" class="table table-bordered table-striped" data-order='[[ 0, "DESC" ]]'>
+                            <thead>
+                                <tr>
+                                    <td>SQN</td>
+                                    <td>tansactionId</td>
+                                    <td>totalAmount</td>
+                                    <td>currency</td>
+                                    <td>studentId</td>
+                                    <td>studentName</td>
+                                    <td>paidAt</td>
+                                    <td>amount</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.tansactionId)</td>
+                                                <td>$@Html.DisplayFor(modelItem => item.totalAmount)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.currency)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.studentId)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.studentName)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.paidAt)</td>
+                                                <td>$@Html.DisplayFor(modelItem => item.amount)</td>
+                                            </tr>
+                                        }
+                                    }
+                            </tbody>
+
+                        </table> <!-- table end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+<script type="text/javascript">
+
+    $(function () {
+        setInterval(loadTable, 1000);  // invoke load every second
+        loadTable(); // load on initial page loaded
+    });
+
+    function loadTable() {
+        $('#TrainingList').load('/controller/Index');
+    }
+</script>
+
+@*<script type="text/javascript">
+    setTimeout(function () {
+        window.location.href = window.location.href;
+    }, 10000)
+</script>*@

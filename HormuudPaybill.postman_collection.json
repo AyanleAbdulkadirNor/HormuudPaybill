@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "7ca1ec97-93c4-4cac-94e0-eedaf5578b44",
+		"name": " HormuudPaybill",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:50536/api/billing/pay",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "MTExODMxOmEzOTVmNzQ0YWI2ZjI1Njg2OTRiMWVhZGQ1OTIwMzU4ZmZmOTc3N2RjMjZiMzliM2NhMmI4MTM0YTVmNTk2Y2RkNjI1YmFmYzZhNWIwMzY1YzhlZjFkNzE2OWRmNTllNmUwOWQ0MWQ3NWVmNDY3MGIxNjU3ZDQwM2Q2YWQwYjAw",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n        \"requestId\": \"0637573673-836bdsgs7-stgsgs988\",\r\n        \"schemaVersion\": \"1.0\",\r\n        \"timestamp\": \"202002230231032\",\r\n        \"requestBody\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2FjaW9uSW5mbyI6eyJ0YW5zYWN0aW9uSWQiOiIyNzg0NDU4IiwidG90YWxBbW91bnQiOiIyMjAiLCJjdXJyZW5jeSI6IlVTRCJ9LCJwYXllckluZm8iOnsic3R1ZGVudElkIjoiU01EMDAwMTEyMyIsInN0dWRlbnROYW1lIjoiMjUyNjM0NDU1Njc4IiwicGFpZEF0IjoiTU1UIn0sImJpbGxzIjpbeyJhY2NvdW50TnVtYmVyIjoiMTAwMDAxIiwiYW1vdW50IjoiMjAwLjAwIn0seyJhY2NvdW50TnVtYmVyIjoiMTAwMDAyIiwiYW1vdW50IjoiNDUwLjAwIn0seyJhY2NvdW50TnVtYmVyIjoiMTAwMDAzIiwiYW1vdW50IjoiMTAuMDAifSx7ImFjY291bnROdW1iZXIiOiIxMDAwMDQiLCJhbW91bnQiOiI5MC4wMCJ9LHsiYWNjb3VudE51bWJlciI6IjEwMDAwNSIsImFtb3VudCI6IjYwLjAwIn1dfQ.1d3Rfij0RZrSVwr5dVaVM9jBjwIiWgNDXorg4jeQlnw\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:50536/api/billing/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "50536",
+					"path": [
+						"api",
+						"billing",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:50536/api/billing/pay",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
